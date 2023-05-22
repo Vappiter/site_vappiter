@@ -9,7 +9,7 @@ class CountryAdmin(admin.ModelAdmin):
 
 @admin.register(Company)
 class CompanyAdmin(admin.ModelAdmin):
-    # list_display = ('country', 'company')
+    list_display = ('company','country')
     pass
 
 # admin.site.register()
