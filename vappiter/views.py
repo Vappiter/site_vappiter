@@ -3,5 +3,6 @@ from django.http import HttpResponseRedirect, HttpResponseNotFound
 
 from .models import Country
 
-def index(request):
+def vcountry(request):
     country = Country.objects.all()
+    return render(request, 'country.html',{'country':country})
