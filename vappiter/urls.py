@@ -21,9 +21,8 @@ from vappiter import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("", views.index),
-    path('country/', views.vcountry)
-
-
+    path("", views.index, name='index'),
+    path('index', views.index, name='index'),
+    path('country', views.vcountry, name='country')
     
 ]
