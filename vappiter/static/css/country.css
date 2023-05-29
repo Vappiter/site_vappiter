@@ -1,26 +1,17 @@
-table {
+.table-all {
+    display: table;
     table-layout: fixed;
-    width: 100%;
-    border-collapse: collapse;
+    width: 400;
+    /* border-collapse: collapse; */
     border: 3px solid purple;
   }
-  
-   thead th:nth-child(1) {
-    width: 30%;
-  }
-  
-  thead th:nth-child(2) {
-    width: 20%;
-  }
-  
-  thead th:nth-child(3) {
-    width: 15%;
-  }
-  
-  thead th:nth-child(4) {
-    width: 35%;
-  }
-  
-  th, td {
-    padding: 20px;
-  } 
+.table-heading{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  position: relative;
+  border: 1px solid green;
+  text-align: center;
+
+}  
+ 

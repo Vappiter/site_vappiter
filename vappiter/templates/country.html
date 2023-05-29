@@ -10,10 +10,10 @@
    
     {% if country.count > 0 %}
     <h2>Список стран производителей</h2>
-    <table>
-        <thead><th>Id</th><th>Название страны</th></th></thead>
+    <table class='table-all'>
+        <thead class='table-heading'><th>№ пп</th><th>Название страны</th></th></thead>
         {% for hcountry in country %}
-        <tr>
+        <tr class ='table-row'>
             <td>{{ hcountry.id }}</td>
             <td>{{ hcountry.country }}</td>
             <td><a href="edit/{{person.id}}">Изменить</a> | <a href="delete/{{person.id}}">Удалить</a></td>
