@@ -15,11 +15,16 @@ class Company(models.Model):
     def __str__(self) -> str:
         return self.company
 
+class Nameproduct(models.Model):
+    """Наименование изделия"""
+    nameproduct = models.CharField(max_length=100, verbose_name='Наименование изделия')
+    
+    
 class Product(models.Model):
-    """ Оборудование"""
-    company=models.ForeignKey(Company, verbose_name=("Производитель"), on_delete=models.CASCADE)
-    title_product = models.CharField(max_length=100, verbose_name='Наименование изделия')
-    type_product = models.CharField(max_length=50, verbose_name='Тип изделия')
+    """Модель оборудования"""
+    company = models.ForeignKey(Company, verbose_name=("Производитель"), on_delete=models.CASCADE, null=True)
+    nameproduct = models.ForeignKey(Nameproduct, verbose_name=("Наименование изделия"), on_delete=models.CASCADE, null=True)
+    type_product = models.CharField(max_length=50, verbose_name='Модель изделия')
     
     
 

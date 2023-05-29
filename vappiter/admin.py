@@ -14,7 +14,7 @@ class CompanyAdmin(admin.ModelAdmin):
 
 @admin.register(Nameproduct)
 class NameproductAdmin(admin.ModelAdmin):
-    list_display = ('nameproduct')
+    # list_display = ('nameproduct')
     pass
 
 
