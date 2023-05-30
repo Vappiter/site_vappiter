@@ -7,21 +7,30 @@
     <link rel="stylesheet" href="{% static "css/country.css" %}"  type="text/css">
 </head>
 <body>
-   
     {% if country.count > 0 %}
     <h2 class='h2'>Список стран производителей</h2>
-    <table class='table-all'>
-        <thead class='table-heading'><th>№ пп</th><th>Название страны</th></th></thead>
-        {% for hcountry in country %}
-        <tr class ='table-row'>
-            <td>{{ hcountry.id }}</td>
-            <td>{{ hcountry.country }}</td>
-            <td><a href="edit/{{person.id}}">Изменить</a> | <a href="delete/{{person.id}}">Удалить</a></td>
-        </tr>
-        {% endfor %}
+    <body class = 'body'>
+    <table class='table'>
+        <thead class='table-heading' id='heading'>
+            <tr>
+            <th class = 'col'>№ пп</th>
+            <th class = 'col'>Название страны</th>
+            </tr>
+        </thead>
+        <tbody class ='table-body'>
+                {% for hcountry in country %}
+                    <tr>
+                    <td class = 'col'>{{ hcountry.id }}</td>
+                    <td class = 'col'>{{ hcountry.country }}</td>
+                {% comment %} <td><a href="edit/{{person.id}}">Изменить</a> | <a href="delete/{{person.id}}">Удалить</a></td> {% endcomment %}
+                    </tr>
+                {% endfor %}
+            
+        <tbody class ='table-body'>
     </table>
+    </body>    
     {% endif %}
-
+       
     <form>
         <p style="text-align: left"><button formaction = 'index'>На главную страницу</button>
     </form> 
