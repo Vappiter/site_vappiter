@@ -9,19 +9,22 @@
 <body>
     {% if country.count > 0 %}
     <h2 class='h2'>Список стран производителей</h2>
+    
     <body class = 'body'>
+    <br>    
     <table class='table'>
+        <caption class='h2'>Список стран производителей</caption>
         <thead class='table-heading' id='heading'>
             <tr>
-            <th class = 'col'>№ пп</th>
-            <th class = 'col'>Название страны</th>
+            <th class = 'col1'>№ пп</th>
+            <th class = 'col2'>Название страны</th>
             </tr>
         </thead>
         <tbody class ='table-body'>
                 {% for hcountry in country %}
                     <tr>
-                    <td class = 'col'>{{ hcountry.id }}</td>
-                    <td class = 'col'>{{ hcountry.country }}</td>
+                    <td class = 'col1'>{{ hcountry.id }}</td>
+                    <td class = 'col2'>{{ hcountry.country }}</td>
                 {% comment %} <td><a href="edit/{{person.id}}">Изменить</a> | <a href="delete/{{person.id}}">Удалить</a></td> {% endcomment %}
                     </tr>
                 {% endfor %}
