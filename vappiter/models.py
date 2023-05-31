@@ -30,14 +30,23 @@ class Building(models.Model):
     """Здание"""
     building = models.CharField(max_length=25, verbose_name='Здание')    
 
+    def __str__(self) -> str:
+        return self.building
+
 class Block(models.Model):
     """Блок"""
     block = models.CharField(max_length=4, verbose_name='Блок')
     # building = models.ForeignKey(Building, on_delete=models.CASCADE, verbose_name='Здание')
 
+    def __str__(self) -> str:
+        return self.block
+
 class Level(models.Model):
     """Этаж"""
-    building = models.CharField(max_length=5, verbose_name='Этаж')
+    level = models.CharField(max_length=5, verbose_name='Этаж')
+
+    def __str__(self) -> str:
+        return self.level
 
 class Room(models.Model):
     """Помещение"""
