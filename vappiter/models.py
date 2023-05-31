@@ -26,7 +26,32 @@ class Product(models.Model):
     nameproduct = models.ForeignKey(Nameproduct, verbose_name=("Наименование изделия"), on_delete=models.CASCADE, null=True)
     type_product = models.CharField(max_length=50, verbose_name='Модель изделия')
     
-    
+class Building(models.Model):
+    """Здание"""
+    building = models.CharField(max_length=25, verbose_name='Здание')    
+
+class Block(models.Model):
+    """Блок"""
+    block = models.CharField(max_length=4, verbose_name='Блок')
+    # building = models.ForeignKey(Building, on_delete=models.CASCADE, verbose_name='Здание')
+
+class Level(models.Model):
+    """Этаж"""
+    building = models.CharField(max_length=5, verbose_name='Этаж')
+
+class Room(models.Model):
+    """Помещение"""
+    room = models.CharField(max_length=10, verbose_name='Этаж')    
+
+class Equipment(models.Model):
+    """Оборудование"""
+    type_product = models.ForeignKey(Product, verbose_name=("Модель изделия"), on_delete=models.CASCADE, null=True)
+    building = models.ForeignKey(Building, verbose_name=("Здание"), on_delete=models.CASCADE, null=True)
+    block = models.ForeignKey(Block, verbose_name=("Блок"), on_delete=models.CASCADE, null=True)
+    level = models.ForeignKey(Level, verbose_name=("Уровень"), on_delete=models.CASCADE, null=True)
+    room = models.ForeignKey(Room, verbose_name=("Помещение"), on_delete=models.CASCADE, null=True)
+    sernum = models.CharField(max_length=20, verbose_name='Серийный номер')
+
 
     # class Meta:
     #     verbose_name = _("")

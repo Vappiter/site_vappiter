@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from vappiter.models import Country, Company, Product, Nameproduct   
+from vappiter.models import Country, Company, Product, Nameproduct, Building, Block, Level, Room, Equipment   
 
 @admin.register(Country)
 class CountryAdmin(admin.ModelAdmin):
@@ -21,5 +21,25 @@ class NameproductAdmin(admin.ModelAdmin):
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
     list_display = ('company','nameproduct','type_product')
+    pass
+
+@admin.register(Building)
+class BuildingAdmin(admin.ModelAdmin):
+    pass
+
+@admin.register(Block)
+class BlockAdmin(admin.ModelAdmin):
+    pass
+
+@admin.register(Level)
+class LevelAdmin(admin.ModelAdmin):
+    pass
+
+@admin.register(Room)
+class RoomAdmin(admin.ModelAdmin):
+    pass
+
+@admin.register(Equipment)
+class EquipmentAdmin(admin.ModelAdmin):
     pass
 # admin.site.register()
