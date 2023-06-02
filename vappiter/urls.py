@@ -26,7 +26,8 @@ urlpatterns = [
     path("", views.index, name='index'),
     path('index', views.index, name='index'),
     path('country', views.vcountry, name='country'),
+    path('company/', CompanyView.as_view()),
     path('api/', include('company.urls')),
-    path ('company', CompanyView.as_view())
+    
     
 ]
