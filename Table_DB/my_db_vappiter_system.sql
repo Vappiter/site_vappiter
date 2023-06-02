@@ -16,27 +16,27 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `vappiter_country`
+-- Table structure for table `vappiter_system`
 --
 
-DROP TABLE IF EXISTS `vappiter_country`;
+DROP TABLE IF EXISTS `vappiter_system`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `vappiter_country` (
+CREATE TABLE `vappiter_system` (
   `id` bigint NOT NULL AUTO_INCREMENT,
-  `country` varchar(100) NOT NULL,
+  `system` varchar(10) NOT NULL,
+  `fullnamesystem` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `vappiter_country`
+-- Dumping data for table `vappiter_system`
 --
 
-LOCK TABLES `vappiter_country` WRITE;
-/*!40000 ALTER TABLE `vappiter_country` DISABLE KEYS */;
-INSERT INTO `vappiter_country` VALUES (4,'США'),(5,'Россия'),(6,'Китай');
-/*!40000 ALTER TABLE `vappiter_country` ENABLE KEYS */;
+LOCK TABLES `vappiter_system` WRITE;
+/*!40000 ALTER TABLE `vappiter_system` DISABLE KEYS */;
+/*!40000 ALTER TABLE `vappiter_system` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -48,4 +48,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-05-29 19:00:01
+-- Dump completed on 2023-06-02 12:36:06

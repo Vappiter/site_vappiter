@@ -16,26 +16,27 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `vappiter_nameproduct`
+-- Table structure for table `vappiter_building`
 --
 
-DROP TABLE IF EXISTS `vappiter_nameproduct`;
+DROP TABLE IF EXISTS `vappiter_building`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `vappiter_nameproduct` (
+CREATE TABLE `vappiter_building` (
   `id` bigint NOT NULL AUTO_INCREMENT,
-  `nameproduct` varchar(100) NOT NULL,
+  `building` varchar(25) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `vappiter_nameproduct`
+-- Dumping data for table `vappiter_building`
 --
 
-LOCK TABLES `vappiter_nameproduct` WRITE;
-/*!40000 ALTER TABLE `vappiter_nameproduct` DISABLE KEYS */;
-/*!40000 ALTER TABLE `vappiter_nameproduct` ENABLE KEYS */;
+LOCK TABLES `vappiter_building` WRITE;
+/*!40000 ALTER TABLE `vappiter_building` DISABLE KEYS */;
+INSERT INTO `vappiter_building` VALUES (1,'Башня'),(2,'МФЗ'),(3,'Стилобат'),(4,'КЗС');
+/*!40000 ALTER TABLE `vappiter_building` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -47,4 +48,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-05-31 19:03:44
+-- Dump completed on 2023-06-02 12:36:06

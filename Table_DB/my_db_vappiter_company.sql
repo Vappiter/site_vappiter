@@ -16,26 +16,30 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `vappiter_block`
+-- Table structure for table `vappiter_company`
 --
 
-DROP TABLE IF EXISTS `vappiter_block`;
+DROP TABLE IF EXISTS `vappiter_company`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `vappiter_block` (
+CREATE TABLE `vappiter_company` (
   `id` bigint NOT NULL AUTO_INCREMENT,
-  `block` varchar(4) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `company` varchar(100) NOT NULL,
+  `country_id` bigint NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `vappiter_company_country_id_8e15b487_fk_vappiter_country_id` (`country_id`),
+  CONSTRAINT `vappiter_company_country_id_8e15b487_fk_vappiter_country_id` FOREIGN KEY (`country_id`) REFERENCES `vappiter_country` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `vappiter_block`
+-- Dumping data for table `vappiter_company`
 --
 
-LOCK TABLES `vappiter_block` WRITE;
-/*!40000 ALTER TABLE `vappiter_block` DISABLE KEYS */;
-/*!40000 ALTER TABLE `vappiter_block` ENABLE KEYS */;
+LOCK TABLES `vappiter_company` WRITE;
+/*!40000 ALTER TABLE `vappiter_company` DISABLE KEYS */;
+INSERT INTO `vappiter_company` VALUES (1,'Cisco',1);
+/*!40000 ALTER TABLE `vappiter_company` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -47,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-05-31 19:03:44
+-- Dump completed on 2023-06-02 12:36:06
