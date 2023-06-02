@@ -16,17 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from vappiter import views
-from .views import CompanyView
 
-app_name = 'vappiter'
 
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path("", views.index, name='index'),
-    path('index', views.index, name='index'),
-    path('country', views.vcountry, name='country'),
-    path('api/', include('company.urls')),
-    path ('company', CompanyView.as_view())
-    
-]
+# urlpatterns = [
+#     path('admin/', admin.site.urls),
+#     path('api/', include('company.urls')),
+        
+# ]
