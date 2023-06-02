@@ -63,21 +63,24 @@ class Room(models.Model):
 class System(models.Model):
     """Система КИТСО"""
     system = models.CharField(max_length=10, verbose_name='Система') 
-    fullnamesystem = models.CharField(max_length=50, verbose_name='Наименование системы')      
+    fullnamesystem = models.CharField(max_length=50, verbose_name='Наименование системы', null=True, blank=True)      
 
     def __str__(self) -> str:
         return self.system
 
-# class Equipment(models.Model):
-#     """Оборудование"""
-#     system = models.ForeignKey(System, verbose_name=("Система КИТСО"), on_delete=models.CASCADE, null=True)    
-#     type_product = models.ForeignKey(Product, verbose_name=("Модель изделия"), on_delete=models.CASCADE, null=True)
-#     building = models.ForeignKey(Building, verbose_name=("Здание"), on_delete=models.CASCADE, null=True)
-#     block = models.ForeignKey(Block, verbose_name=("Блок"), on_delete=models.CASCADE, null=True)
-#     level = models.ForeignKey(Level, verbose_name=("Уровень"), on_delete=models.CASCADE, null=True)
-#     room = models.ForeignKey(Room, verbose_name=("Помещение"), on_delete=models.CASCADE, null=True)
-#     sernum = models.CharField(max_length=20, verbose_name='Серийный номер', null=True)
+class Equipment(models.Model):
+    """Оборудование"""
+    system = models.ForeignKey(System, verbose_name=("Система КИТСО"), on_delete=models.CASCADE, null=True, blank=True)    
+    product = models.ForeignKey(Product, verbose_name=("Модель изделия"), on_delete=models.CASCADE, null=True, blank=True)
+    building = models.ForeignKey(Building, verbose_name=("Здание"), on_delete=models.CASCADE, null=True, blank=True)
+    block = models.ForeignKey(Block, verbose_name=("Блок"), on_delete=models.CASCADE, null=True, blank=True)
+    level = models.ForeignKey(Level, verbose_name=("Уровень"), on_delete=models.CASCADE, null=True, blank=True)
+    room = models.ForeignKey(Room, verbose_name=("Помещение"), on_delete=models.CASCADE, null=True, blank=True)
+    sernum = models.CharField(max_length=20, verbose_name='Серийный номер', null=True, blank=True)
 
+    # def __str__(self) -> str:
+    #     return self.sernum
+    
 
     # class Meta:
     #     verbose_name = _("")

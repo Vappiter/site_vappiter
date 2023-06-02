@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Country, Company, Titleproduct, Product, Building, Block, Level, Room, System  
+from .models import Country, Company, Titleproduct, Product, Building, Block, Level, Room, System, Equipment  
 
 # Nameproduct, Building, Block, Level, Room, System   
 
@@ -34,15 +34,21 @@ class BlockAdmin(admin.ModelAdmin):
 class LevelAdmin(admin.ModelAdmin):
     pass
 
-@admin.register(Room)
+@admin.register(Room)# @admin.register(Equipment)
+# class EquipmentAdmin(admin.ModelAdmin):
+#     pass
 class RoomAdmin(admin.ModelAdmin):
     pass
 
-# # @admin.register(Equipment)
-# # class EquipmentAdmin(admin.ModelAdmin):
-# #     pass
+@admin.register(Equipment)
+class EquipmentAdmin(admin.ModelAdmin):
+    # list_display = ('system','product','building')
+    pass
 
 @admin.register(System)
 class SystemAdmin(admin.ModelAdmin):
+    list_display = ('system','fullnamesystem')
     pass
+
+
 # admin.site.register()
