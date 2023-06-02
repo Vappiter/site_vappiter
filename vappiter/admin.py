@@ -42,7 +42,7 @@ class RoomAdmin(admin.ModelAdmin):
 
 @admin.register(Equipment)
 class EquipmentAdmin(admin.ModelAdmin):
-    # list_display = ('system','product','building')
+    list_display = ('system','product','building')
     pass
 
 @admin.register(System)
