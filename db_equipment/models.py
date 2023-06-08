@@ -41,7 +41,7 @@ class Building(models.Model):
 
 class Block(models.Model):
     """Блок"""
-    block = models.CharField(max_length=4, verbose_name='Блок')
+    block = models.CharField(max_length=13, verbose_name='Блок')
     
     def __str__(self) -> str:
         return self.block
@@ -55,10 +55,17 @@ class Level(models.Model):
 
 class Room(models.Model):
     """Помещение"""
-    room = models.CharField(max_length=10, verbose_name='Этаж')  
+    room = models.CharField(max_length=13, verbose_name='Помещение')  
 
     def __str__(self) -> str:
         return self.room
+    
+class Box(models.Model):
+    """Помещение"""
+    box = models.CharField(max_length=20, verbose_name='Шкаф')  
+
+    def __str__(self) -> str:
+        return self.box    
 
 class System(models.Model):
     """Система КИТСО"""
@@ -76,7 +83,9 @@ class Equipment(models.Model):
     block = models.ForeignKey(Block, verbose_name=("Блок"), on_delete=models.CASCADE, null=True, blank=True)
     level = models.ForeignKey(Level, verbose_name=("Уровень"), on_delete=models.CASCADE, null=True, blank=True)
     room = models.ForeignKey(Room, verbose_name=("Помещение"), on_delete=models.CASCADE, null=True, blank=True)
-    sernum = models.CharField(max_length=20, verbose_name='Серийный номер', null=True, blank=True)
+    box = models.ForeignKey(Box, verbose_name=("Шкаф"), on_delete=models.CASCADE, null=True, blank=True)
+    sernum = models.CharField(max_length=30, verbose_name='Серийный номер', null=True, blank=True)
+    comment = models.TextField(max_length=300, verbose_name='Комментарий', null=True,blank=True)
 
     # def __str__(self) -> str:
     #     return self.sernum

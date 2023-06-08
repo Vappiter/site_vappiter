@@ -15,19 +15,25 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from rest_framework import routers
 
-from vappiter import views
-from .views import CompanyView
+from db_equipment import views
+from db_equipment.views import CompanyView, CompanyView, equipment
 
-app_name = 'vappiter'
+# router = routers.DefaultRouter()
+# router.register(r'company/', CompanyView.as_view())
+
+# app_name = 'vappiter'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", views.index, name='index'),
     path('index', views.index, name='index'),
     path('country', views.vcountry, name='country'),
-    path('company/', CompanyView.as_view()),
-    path('api/', include('company.urls')),
-    
-    
-]
+    # path('company/', CompanyView.as_view()),
+    path('api/company/', CompanyView.as_view()),
+    path('equipment/', equipment, name='equipment')
+       
+] 
+
+# urlpatterns += router.urls
