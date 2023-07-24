@@ -25,6 +25,6 @@ class CompanyView(APIView):
 #       company = Company.objects.all()
 #       return Response ({'company': company})
 
-def equipment(request):
+def vequipment(request):
    equipment = Equipment.objects.all()
    return render(request, 'equipment.html',{'equipment': equipment})

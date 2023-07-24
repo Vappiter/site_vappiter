@@ -18,7 +18,7 @@ from django.urls import path, include
 from rest_framework import routers
 
 from db_equipment import views
-from db_equipment.views import CompanyView, CompanyView, equipment
+from db_equipment.views import CompanyView, CompanyView, Equipment
 
 # router = routers.DefaultRouter()
 # router.register(r'company/', CompanyView.as_view())
@@ -32,7 +32,7 @@ urlpatterns = [
     path('country', views.vcountry, name='country'),
     # path('company/', CompanyView.as_view()),
     path('api/company/', CompanyView.as_view()),
-    path('equipment/', equipment, name='equipment')
+    path('equipment/', views.vequipment, name='equipment')
        
 ] 
 
