@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Страна</title>
+    <link rel="stylesheet" href="{% static "css/country.css" %}"  type="text/css">
+</head>
+<body>
+    {% if country.count > 0 %}
+    <h2 class='h2'>Список стран производителей</h2>
+    
+    <body class = 'body'>
+    <br>    
+    <table class='table'>
+        <caption class='h2'>Список стран производителей</caption>
+        <thead class='table-heading' id='heading'>
+            <tr>
+            <th class = 'col1'>№ пп</th>
+            <th class = 'col2'>Название страны</th>
+            <th class = 'col3'>Действие</th>
+            </tr>
+        </thead>
+        <tbody class ='table-body'>
+                {% for hcountry in country %}
+                    <tr>
+                    <td class = 'col1'>{{ hcountry.id }}</td>
+                    <td class = 'col2'>{{ hcountry.country }}</td>
+                    <td class = 'col3'><a href="edit/{{person.id}}">Изменить</a> | <a href="delete/{{person.id}}">Удалить</a></td> 
+                    </tr>
+                {% endfor %}
+            
+        <tbody class ='table-body'>
+    </table>
+    </body>    
+    {% endif %}
+       
+    <form>
+        <p style="text-align: left"><button formaction = 'index'>На главную страницу</button>
+    </form> 
+ {% comment %} <form method="POST" action="create/">
+        {% csrf_token %}
+        <p>
+            <label>Введите имя</label><br>
+            <input type="text" name="name" />
+        </p>
+        <p>
+            <label>Введите возраст</label><br>
+            <input type="number" name="age" />
+        </p>
+        <input type="submit" value="Сохранить" >
+    </form> {% endcomment %}
+
+</body>
+</html>
